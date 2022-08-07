@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PianoTerra.Salone"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imageSalone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/imgsalone" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="540dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageSalone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageSalone">
+
+        <Button
+            android:id="@+id/btnLuce34"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.345"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce32"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce35"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="344dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.071"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce33"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="220dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.232"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce53"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="448dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.433"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce54"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="272dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.569"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnLuce56"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#DDD6D6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="204dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+
+            android:id="@+id/btnLuce55"
+            android:background="@drawable/roundbutton"
+            android:backgroundTint="#C5BBBB"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="96dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.624"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnTapp16"
+            android:layout_width="70dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="132dp"
+            android:text="tapp16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.997"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnTapp15"
+            android:layout_width="68dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="488dp"
+            android:text="tapp15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.658"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_browse.xml" value="0.25" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_list_subscription.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_monitored_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_monitoring.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_read.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_read2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_select_session.xml" value="0.33" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_session.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/dialog_inserdataread.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/list_endpoints.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/list_monitoredreadings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/list_readings.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Omar/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/list_session.xml" value="0.38858695652173914" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/drawable/roundbutton.xml" value="0.135" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/drawable/roundedbutton.xml" value="0.2595" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_bagno_entrata.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_browse.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_camera_matrimoniale.xml" value="0.1" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_camera_ospiti.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_camera_singola.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_comandi_rapidi.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_corridoio_scale.xml" value="0.2717391304347826" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_cucina.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_datatapp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_lavanderia.xml" value="0.264" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_list_subscription.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_pp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_pt.xml" value="0.20153985507246377" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_read.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_salone.xml" value="0.264" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_scale_corridoio.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_session.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/activity_studio.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/dialog_datatapp.xml" value="0.264" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/dialog_inserdatawrite.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/home_session.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/my_row.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/my_rowpt.xml" value="0.4" />
+        <entry key="..\:/Users/axelk/AndroidStudioProjects/Android_OPCUA_Client-master/app/src/main/res/layout/session_pt.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/axelk/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

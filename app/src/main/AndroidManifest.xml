@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.twistedappdeveloper.opcclient">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity">
+        <activity
+            android:name=".PrimoPiano.ScaleCorridoio"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPP" />
+        <activity
+            android:name=".PrimoPiano.CameraMatrimoniale"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPP" />
+        <activity
+            android:name=".PrimoPiano.CameraSingola"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPP" />
+        <activity
+            android:name=".PrimoPiano.Studio"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPP" />
+        <activity
+            android:name=".PianoTerra.CameraOspiti"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".PianoTerra.Lavanderia"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".PianoTerra.CorridoioScale"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".PianoTerra.BagnoEntrata"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".PianoTerra.Cucina"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".PianoTerra.Salone"
+            android:exported="false"
+            android:label="Details"
+            android:parentActivityName=".SessionPT" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="userPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".SessionPT"
+            android:label="Details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".SessionPP"
+            android:label="Details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="userPortrait" />
+        <activity
+            android:name=".ComandiRapidi"
+            android:label="Details"
+            android:parentActivityName=".Home"
+            android:screenOrientation="userPortrait" />
+    </application>
+
+</manifest>

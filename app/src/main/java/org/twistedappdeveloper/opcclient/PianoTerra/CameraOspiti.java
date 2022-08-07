@@ -1,0 +1,282 @@
+package org.twistedappdeveloper.opcclient.PianoTerra;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.opcfoundation.ua.builtintypes.Variant;
+import org.opcfoundation.ua.core.Attributes;
+import org.opcfoundation.ua.core.ReadResponse;
+import org.opcfoundation.ua.core.TimestampsToReturn;
+import org.twistedappdeveloper.opcclient.R;
+
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import OpcUtils.ConnectionThread.ThreadRead;
+import OpcUtils.ConnectionThread.ThreadWrite;
+import OpcUtils.ManagerOPC;
+import OpcUtils.SessionElement;
+
+public class CameraOspiti extends AppCompatActivity {
+    ImageView imageView;
+    Button btnLuce21, btnLuce22, btnLuce26, btnLuce27, btnLuce28, btnTapp9, btnTapp11;
+    ManagerOPC managerOPC;
+    SessionElement sessionElement;
+    int session_position;
+    Variant value_write;
+    String url1a = "|var|CODESYS Control Win V3 x64.Application.PLC_VAR.LUCI[";
+    String url1b = "|var|CODESYS Control Win V3 x64.Application.PLC_VAR.TAPP[";
+    String url2a = "].SR";
+    String url2b = "].ATTUALE";
+    String url2c = "].APERTURA";
+    Handler handler = new Handler();
+    Runnable runnable;
+    int delay = 10;
+    Variant Token;
+    int Dim = 0;
+    int Type = 0;
+    int Counter = 0;
+    int idTag = 0;
+    int Step = 0;
+    List<String> txtButton = new ArrayList<String>();
+
+    List<List<Integer>> dmtStanza = Arrays.asList(Arrays.asList(0, 21),
+            Arrays.asList(0, 22),
+            Arrays.asList(0, 26),
+            Arrays.asList(0, 27),
+            Arrays.asList(0, 28),
+            Arrays.asList(1, 9),
+            Arrays.asList(1, 11));
+
+
+    // |var|CODESYS Control Win V3 x64.Application.PLC_VAR.LUCI[55].PB_PC
+
+    public void iniz (List a){
+        for (int i=0; i<15; i++){
+            a.add(i, "###");
+        }
+    }
+
+
+
+    public void createWrite (String a, Boolean b){
+        value_write = new Variant(b);
+        ThreadWrite t;
+        t = new ThreadWrite(sessionElement.getSession(), 4, url1a + a + url2a , Attributes.Value, value_write);
+        @SuppressLint("HandlerLeak") Handler handler = new Handler() {};
+        t.start(handler);
+    }
+
+    public void createWrite (String a, short b){
+        value_write = new Variant(b);
+        ThreadWrite t;
+        t = new ThreadWrite(sessionElement.getSession(), 4, url1b + a + url2c , Attributes.Value, value_write);
+        @SuppressLint("HandlerLeak") Handler handler = new Handler() {};
+        t.start(handler);
+    }
+
+    public void readingThread (final int type, int id){
+        ThreadRead t;
+        if (type==0) {
+            t = new ThreadRead(sessionElement.getSession(), 1000, TimestampsToReturn.Both, 4, url1a + Integer.toString(id) + url2a, Attributes.Value);
+            @SuppressLint("HandlerLeak") Handler handler = new Handler() {
+                public void handleMessage(Message msg) {
+                    ReadResponse res = (ReadResponse) msg.obj;
+                    Token = res.getResults()[0].getValue();
+                }
+            };
+            t.start(handler);
+        }
+        else {
+            t = new ThreadRead(sessionElement.getSession(), 1000, TimestampsToReturn.Both, 4, url1b + Integer.toString(id) + url2b, Attributes.Value);
+            @SuppressLint("HandlerLeak") Handler handler = new Handler() {
+                public void handleMessage(Message msg) {
+                    ReadResponse res = (ReadResponse) msg.obj;
+                    Token = res.getResults()[0].getValue();
+                }
+            };
+            t.start(handler);
+        }
+    }
+
+    public void changeState (String a, String b){
+        if (a=="ON")
+            createWrite(b, false);
+        else
+            createWrite(b, true);
+    }
+
+    public void dialogTapp (final String a){
+        final Dialog dialog_write = new Dialog(CameraOspiti.this, R.style.AppAlert);
+        dialog_write.setContentView(R.layout.dialog_datatapp);
+        final EditText edtvalue_write = dialog_write.findViewById(R.id.edtWriteData);
+        Button btnokdata = dialog_write.findViewById(R.id.btnOkData);
+        Button btnopen = dialog_write.findViewById(R.id.btnOpen);
+        Button btnclose = dialog_write.findViewById(R.id.btnClose);
+        btnokdata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (edtvalue_write.getText().toString().length() == 0) {
+                    Toast.makeText(CameraOspiti.this, R.string.InserisciValoriValidi, Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    int value = Integer.parseInt(edtvalue_write.getText().toString());
+                    createWrite(a, (short) value);
+                }
+                dialog_write.dismiss();
+            }
+        });
+        btnopen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createWrite(a, (short) 100);
+                dialog_write.dismiss();
+            }
+        });
+        btnclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createWrite(a, (short) 0);
+                dialog_write.dismiss();
+            }
+        });
+        dialog_write.show();
+    }
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_camera_ospiti);
+
+        session_position = getIntent().getIntExtra("sessionPosition", -1);
+        if (session_position < 0) {
+            Toast.makeText(CameraOspiti.this, R.string.Errore, Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
+        imageView = findViewById(R.id.imageSalone);
+
+        btnLuce21 = findViewById(R.id.btnLuce21);
+        btnLuce22 = findViewById(R.id.btnLuce22);
+        btnLuce26 = findViewById(R.id.btnLuce26);
+        btnLuce27 = findViewById(R.id.btnLuce27);
+        btnLuce28 = findViewById(R.id.btnLuce28);
+        btnTapp9 = findViewById(R.id.btnTapp9);
+        btnTapp11 = findViewById(R.id.btnTapp11);
+
+
+
+        managerOPC = ManagerOPC.getIstance();
+        sessionElement = managerOPC.getSessions().get(session_position);
+
+        iniz(txtButton);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.btnLuce21:
+                        changeState(btnLuce21.getText().toString(), "21");
+                        break;
+                    case R.id.btnLuce22:
+                        changeState(btnLuce22.getText().toString(), "22");
+                        break;
+                    case R.id.btnLuce26:
+                        changeState(btnLuce26.getText().toString(), "26");
+                        break;
+                    case R.id.btnLuce27:
+                        changeState(btnLuce27.getText().toString(), "27");
+                        break;
+                    case R.id.btnLuce28:
+                        changeState(btnLuce28.getText().toString(), "28");
+                        break;
+                    case R.id.btnTapp9:
+                        dialogTapp("9");
+                        break;
+                    case R.id.btnTapp11:
+                        dialogTapp("11");
+                        break;
+                }
+            }
+        };
+
+        btnLuce21.setOnClickListener(listener);
+        btnLuce22.setOnClickListener(listener);
+        btnLuce26.setOnClickListener(listener);
+        btnLuce27.setOnClickListener(listener);
+        btnLuce28.setOnClickListener(listener);
+        btnTapp9.setOnClickListener(listener);
+        btnTapp11.setOnClickListener(listener);
+    }
+
+    @Override
+    protected void onResume() {
+        handler.postDelayed(runnable = new Runnable() {
+            public void run() {
+                handler.postDelayed(runnable, delay);
+                switch (Step) {
+                    case 0:
+                        Dim = dmtStanza.size();
+                        Type = dmtStanza.get(Counter).get(0);
+                        idTag = dmtStanza.get(Counter).get(1);
+                        Step++;
+                        break;
+                    case 1:
+                        Token = null;
+                        readingThread(Type, idTag);
+                        Step++;
+                        break;
+                    case 2:
+                        if (Token != null) {
+                            if(dmtStanza.get(Counter).get(0)==0){
+                                if(Token.booleanValue()==true){
+                                    txtButton.set(Counter, "ON");
+                                }
+                                if(Token.booleanValue()==false){
+                                    txtButton.set(Counter, "OFF");
+                                }
+                            } else
+                                txtButton.set(Counter, Token.toString()+"%");
+                            Step++;
+                        }
+                        break;
+                    case 3:
+                        if (Counter < Dim-1)
+                            Counter++;
+                        else {
+                            Counter = 0;
+                            btnLuce21.setText(txtButton.get(0));
+                            btnLuce22.setText(txtButton.get(1));
+                            btnLuce26.setText(txtButton.get(2));
+                            btnLuce27.setText(txtButton.get(3));
+                            btnLuce28.setText(txtButton.get(4));
+                            btnTapp9.setText(txtButton.get(5));
+                            btnTapp11.setText(txtButton.get(6));
+                        }
+                        Step = 0;
+                        break;
+                }
+            }
+        }, delay);
+        super.onResume();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
+    }
+}
