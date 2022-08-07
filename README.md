@@ -13,3 +13,4 @@ It is a demo version developed to show the potential of the OPC UA standard. OPC
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoreditem1.0.8.0.jpg?raw=true)
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoredhome1.0.8.0.jpg?raw=true)
 ![alt text](https://github.com/SimoneTinella/Android_OPCUA_Client/blob/master/doc/monitoring1.0.8.0.jpg?raw=true)
+"# Android_OPCUA_Client-master" 
